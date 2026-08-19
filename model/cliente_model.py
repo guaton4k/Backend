@@ -1,5 +1,5 @@
 class Cliente:
-    def __init__(self, id, nombre, email, telefono, direccion, apellido,rut):
+    def __init__(self, id, rut, nombre, apellido, email, telefono, direccion):
         self.id = id
         self.rut = rut
         self.nombre = nombre
@@ -9,12 +9,12 @@ class Cliente:
         self.direccion = direccion
 
     def to_dict(self):
-        return{
-            "id":self.id,
-            "rut":self.rut,
-            "nombre":self.nombre,
-            "apellido":self.apellido,
-            "email":self.email,
-            "telefono":self.telefono,
-            "direccion":self.direccion
+        return {
+            "id": self.id,
+            "rut": self.rut,
+            "nombre": self.nombre,
+            "apellido": self.apellido,
+            "email": self.email,
+            "telefono": self.telefono,
+            "direccion": self.direccion
         }

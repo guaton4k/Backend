@@ -9,12 +9,12 @@ def mostrar_menu():
 def mostrar_clientes(clientes):
     if not clientes:
         print("\n (no hay clientes registrados aun.)")
+        return
 
-    print(f"\n{'Id':<4}{'RUT':<14}{'Nombre':<15}{'Apellido':<15}{'Email':<25}{'Telefono':<25}{'Direccion'}")
-    print("- " * 100)
+    print(f"\n{'Id':<4}{'RUT':<14}{'Nombre':<15}{'Apellido':<15}{'Email':<25}{'Telefono':<15}{'Direccion'}")
+    print("-" * 100)
     for c in clientes:
-        print(c)
-        print(f"\n{'c.id':<4}{'c.rut':<14}{'c.nombre':<15}{'c.apellido':<15}{'c.email':<25}{'c.telefono':<25}{'c.direccion'}")
+        print(f"{c.id:<4}{c.rut:<14}{c.nombre:<15}{c.apellido:<15}{c.email:<25}{c.telefono:<15}{c.direccion}")
 
 def pedir_datos_clientes():
     rut = input("Rut: ")
@@ -26,11 +26,11 @@ def pedir_datos_clientes():
 
     return rut, nombre, apellido, email, telefono, direccion
 
-def pedir_id(mensaje = "ID del cliente"):
+def pedir_id(mensaje="ID del cliente: "):
     return int(input(mensaje))
 
 def mostrar_texto(texto):
     print(f"\n >> {texto}")
 
 def mostrar_error(texto):
-    print(f"\n [ERROR]{texto}")
+    print(f"\n [ERROR] {texto}")
